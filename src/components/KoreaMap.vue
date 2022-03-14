@@ -3,21 +3,25 @@
   <!-- 지도위에 전국 누적 확진자수(vuex로 하면 된다.) -->
   <div>
     <!-- Header -->
-    <!-- <div><NumHeader></NumHeader></div> -->
+    <div><NumBar></NumBar></div>
     <!-- body -->
-    <div><DrawMap></DrawMap></div>
+    <div>
+      <DrawMap></DrawMap>
+    </div>
     <!-- footer -->
   </div>
 </template>
 
 <script>
-// import NumHeader from '../components/common/NumHeader.vue';
-import DrawMap from '../components/common/DrawMap.vue';
+import NumBar from './common/NumBar.vue';
+import DrawMap from './common/DrawMap.vue';
+// import MapButton from './MapButton.vue';
 
 export default {
   components: {
-    // NumHeader,
+    NumBar,
     DrawMap,
+    // MapButton,
   },
 };
 </script>

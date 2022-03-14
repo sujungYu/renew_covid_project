@@ -1,13 +1,22 @@
 <template>
   <div>
-    <div class="map-wrapper"></div>
+    <div class="map-wrapper">
+      <MapHeader></MapHeader>
+      <MapButton></MapButton>
+    </div>
   </div>
 </template>
 
 <script>
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
+import MapHeader from './MapHeader.vue';
+import MapButton from './MapButton.vue';
 export default {
+  components: {
+    MapHeader,
+    MapButton,
+  },
   mounted() {
     this.draw();
   },
@@ -19,7 +28,7 @@ export default {
         koreaMap,
         koreaMap.objects.skorea_provinces_2018_geo,
       );
-      console.log(geojson);
+      // console.log(geojson);
       // const center = d3.geoCentroid(geojson);
       const width = 650;
       const height = 800;
@@ -50,7 +59,7 @@ export default {
         .enter()
         .append('path')
         .attr('d', path)
-        .attr('fill', 'rgb(209, 60, 60)');
+        .attr('fill', 'rgb(219, 45, 67)');
       // .attr('transform', d3.event.transform)
     },
   },
@@ -60,12 +69,12 @@ export default {
 <style>
 .map-wrapper {
   margin: 0 auto;
-  width: 850px;
-  height: 800px;
+  width: 50vw;
+  height: 110vh;
   margin: 0 auto;
-  border: 2px solid rgba(31, 19, 19, 0.089);
+  border: 3px solid rgb(54, 79, 107);
   border-radius: 10px;
-  padding-left: 50px;
+  padding: 1vh 10vw;
   position: relative;
 }
 </style>
